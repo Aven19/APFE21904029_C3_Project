@@ -67,5 +67,15 @@ public class Restaurant {
         return name;
     }
 
+    public String returnTotalPrice(ArrayList<String> bag){
+        int amount = 0;
+        for (int i = 0; i < bag.size(); i++) {
+            for(Item item: menu) {
+            if(item.getName().equals(bag.get(i)))
+                amount+= item.getPrice();
+            }
+        }
+        return "Your order will cost ₹"+String.valueOf(+amount);
+    }
 
 }
